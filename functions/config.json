@@ -1,0 +1,19 @@
+[
+    {
+        "name": "vote",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "mdbw_leaderboard",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "initUser",
+        "private": false,
+        "disable_arg_logs": true
+    }
+]
