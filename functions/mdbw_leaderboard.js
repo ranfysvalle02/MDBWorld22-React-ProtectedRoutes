@@ -9,7 +9,7 @@ exports = async function({ query, headers, body}, response) {
         as: 'cd'
       }
     },
-    {$project:{ voters_count: {$size: { "$ifNull": [ "$voters", [] ] } } }},
+    {$project:{email:1,cd:1,voters:1,voters_count: {$size: { "$ifNull": [ "$voters", [] ] } } }},
     {$sort:{voters_count:1}}
   ]).toArray();
   
