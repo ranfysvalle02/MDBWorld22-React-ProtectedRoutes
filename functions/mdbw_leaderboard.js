@@ -10,7 +10,8 @@ exports = async function({ query, headers, body}, response) {
       }
     },
     {$project:{email:1,cd:1,voters:1,voters_count: {$size: { "$ifNull": [ "$voters", [] ] } } }},
-    {$sort:{voters_count:-1}}
+    {$sort:{voters_count:-1}},
+    {$limit:10}
   ]).toArray();
   
   return allVotes;
