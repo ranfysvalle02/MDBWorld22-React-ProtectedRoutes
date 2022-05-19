@@ -42,10 +42,12 @@ function Navigation() {
                         </NavLink>
                      </NavItem>
                      {!authed &&
-                     <NavItem style={{marginLeft:"2em"}}>
-                        <Button onClick={function noRefCheck(){setModalOpen(!isModalOpen)}}>
-                           Login/Register
-                        </Button>
+                     <NavItem>
+                        <NavLink>
+                           <Link onClick={function noRefCheck(){setModalOpen(!isModalOpen)}} style={{textDecoration:"none",color:"white",padding:"1em",letterSpacing:"3px"}} to={"/"}>
+                              Login/Register
+                           </Link>
+                        </NavLink>
                      </NavItem>                     
                      }
                      {authed &&

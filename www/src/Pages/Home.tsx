@@ -78,9 +78,14 @@ function Home() {
                                  {element.voters.length} likes
                                  </CardSubtitle>
                                  {authed &&                                 
-                                    <Button color="danger" onClick={()=>{
+                                    <Button color="danger" onClick={async ()=>{
                                        alert('voted!');
-                                       vote(element.email);
+                                       await vote(element.email);
+                                       axios.get(LEADERBOARD_URL)
+                                       .then(res => {
+                                          console.log('res',res)
+                                          setData(res.data);
+                                       })
                                     }}>
                                        &#10084;
                                     </Button>
